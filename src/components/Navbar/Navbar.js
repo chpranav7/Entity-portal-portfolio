@@ -63,7 +63,7 @@ const Navbar = ({ logButtonName, setlogButtonName }) => {
   return (
     <div className="bg-gray-900 " >
       <div className="h-16 px-10 flex items-center" >
-        <p className="text-white font-bold" > </p>
+        <p className="text-white font-bold" >Entity portal </p>
         <div style={{ flex: '1' }}></div>
 
 
