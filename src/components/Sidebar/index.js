@@ -305,7 +305,7 @@ const Sidebar = ({ loginButton, isLoggedIn, toggleModal }) => {
                 </svg>
 
 
-                {/*<Text clicked={click}>Search</Text>*/}
+                <Text clicked={click}>Search</Text>
               </Item>
 
               
