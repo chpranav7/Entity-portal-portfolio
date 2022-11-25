@@ -51,10 +51,13 @@ public class SpringWebSecurityConfig extends WebSecurityConfigurerAdapter {
   }
 
   @Bean
-  public static NoOpPasswordEncoder passwordEncoder() {
-    return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
-  }
+  //public static NoOpPasswordEncoder passwordEncoder() {
+  //  return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+  //}
   
+  public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();}
+    
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.cors().and().csrf().disable()
