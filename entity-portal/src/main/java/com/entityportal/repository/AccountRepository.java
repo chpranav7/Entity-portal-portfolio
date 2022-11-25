@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.entityportal.entity.Account;
+import com.entityportal.entity.Users;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
