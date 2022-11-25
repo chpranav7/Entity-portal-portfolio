@@ -53,6 +53,9 @@ public class AuthController {
   
   @Autowired
   UserDetailsServiceImpl userDetailsServiceImpl;
+	
+  @Autowired
+  PasswordEncoder encoder;
 
   @PostMapping("/login")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginPayload loginRequest) {
@@ -79,7 +82,7 @@ public class AuthController {
     // Create new user's account
     Users user = new Users(signUpRequest.getFirstName(), signUpRequest.getLastName(), 
                          signUpRequest.getEmail(),
-                         signUpRequest.getPassword());
+                         encoder.encode(signUpRequest.getPassword()));
 
     userRepository.save(user);
 
