@@ -95,7 +95,7 @@ public class AuthController {
     
     // Create new user's account
     Users user = findByEmail.get();
-    user.setPassword(forgotPasswordRequest.getPassword());
+    user.setPassword(encoder.encode(forgotPasswordRequest.getPassword()));
     userRepository.save(user);
 
     return ResponseEntity.ok(new MessageResponse("Password reset successfully!"));
