@@ -16,4 +16,6 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 
 	List<Account> findAllByOrderByDateDesc();
 	
+	List<Account> findByaddedBy(Users addedby);
+	
 }
