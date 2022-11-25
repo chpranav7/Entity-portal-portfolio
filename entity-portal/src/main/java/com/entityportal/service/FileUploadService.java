@@ -101,4 +101,8 @@ public class FileUploadService {
 	public List<Account> getAllDatas() {
 		return accountRepo.findAllByOrderByDateDesc();
 	}
+	public List<Account>getdata(long userId){
+		Optional<Users>userOptional = userRepo.findById(userId);
+		return accountRepo.findByaddedBy(userOptional.get());
+	}
 }
