@@ -81,7 +81,7 @@ export const registerUser = (fname, lname, email, password) => {
 export const readData = () => {
 
   return axios({
-    url: BACKEND_APP_URL + "/file",
+    url: BACKEND_APP_URL + "/file/" +localStorage.getItem("userId"),
     method: "GET",
     headers: { 'Content-Type': 'application/json', 'token': '' + localStorage.getItem('token') },
   });
