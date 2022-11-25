@@ -31,6 +31,10 @@ public class FileUploadController {
 			throws IOException {
 		return ResponseEntity.status(HttpStatus.OK).body(service.fileUploadCsv(userId, request));
 	}
+	@GetMapping("/{userId}")
+	public ResponseEntity<?>getdataofuser(@PathVariable("userId") long userId){
+		return ResponseEntity.status(HttpStatus.OK).body(service.getdata(userId));
+	}
 		
 	@GetMapping()
 	public ResponseEntity<?> getAllData()  {
